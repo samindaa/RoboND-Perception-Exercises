@@ -58,6 +58,7 @@ def pcl_callback(pcl_msg):
         # Add the detected object to the list of detected objects.
 
     # Publish the list of detected objects
+    pass
 
 if __name__ == '__main__':
 

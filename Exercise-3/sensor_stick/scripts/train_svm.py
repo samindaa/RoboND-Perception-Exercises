@@ -35,6 +35,8 @@ def plot_confusion_matrix(cm, classes,
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
 
+
+print("Training starts")
 # Load training data from disk
 training_set = pickle.load(open('training_set.sav', 'rb'))
 
@@ -62,7 +64,9 @@ encoder = LabelEncoder()
 y_train = encoder.fit_transform(y_train)
 
 # Create classifier
-clf = svm.SVC(kernel='linear')
+C = 0.1
+print("C: {}".format(C))
+clf = svm.SVC(kernel='linear', C=C)
 
 # Set up 5-fold cross-validation
 kf = cross_validation.KFold(len(X_train),
