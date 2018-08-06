@@ -64,7 +64,7 @@ encoder = LabelEncoder()
 y_train = encoder.fit_transform(y_train)
 
 # Create classifier
-C = 0.1
+C = 0.5
 print("C: {}".format(C))
 clf = svm.SVC(kernel='linear', C=C)
 
